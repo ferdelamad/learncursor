@@ -4,18 +4,18 @@ import Link from "next/link"
 
 export const Header = () => {
   return (
-    <header className="border-b border-white/5 bg-black/20 backdrop-blur supports-[backdrop-filter]:bg-black/10">
-      <div className="flex h-16 items-center px-6">
+    <header className="px-6 py-4">
+      <div className="flex items-center">
         <Link href="/" className="flex items-center gap-3 mr-8">
-          <span className="font-bold text-xl bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+          <span className="font-bold text-xl bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
             Learn Cursor
           </span>
         </Link>
         <div className="flex-1" />
-        <nav className="flex items-center gap-4">
+        <nav className="flex items-center gap-3">
           <Button 
             variant="ghost" 
-            className="text-white/70 hover:text-white hover:bg-white/5" 
+            className="text-white/70 hover:text-white rounded-xl" 
             asChild
           >
             <Link href="https://cursor.sh" target="_blank">
@@ -23,7 +23,7 @@ export const Header = () => {
             </Link>
           </Button>
           <Button 
-            className="bg-blue-600/90 hover:bg-blue-600 text-white" 
+            className="bg-violet-600/80 hover:bg-violet-600 text-white rounded-xl" 
             asChild
           >
             <Link href="https://cursor.sh/download" target="_blank">

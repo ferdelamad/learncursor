@@ -42,30 +42,29 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <div className="w-72 border-r border-white/5 bg-black/20">
-      <ScrollArea className="h-full py-6">
-        <div className="px-4 space-y-6">
+    <div className="w-72 rounded-2xl bg-[#12122a]/60 backdrop-blur-xl">
+      <ScrollArea className="h-full">
+        <div className="p-4">
           {sections.map((section) => (
-            <div key={section.title} className="space-y-2">
-              <h4 className="font-medium text-xs text-blue-400/80 uppercase tracking-wider px-2">
+            <div key={section.title} className="mb-6 last:mb-0">
+              <h4 className="font-medium text-xs text-violet-300/50 uppercase tracking-wider px-2 mb-3">
                 {section.title}
               </h4>
-              <div className="space-y-1">
+              <div className="space-y-0.5">
                 {section.items.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block rounded-md px-2 py-1.5 text-sm transition-colors ${
+                    className={`block rounded-xl px-3 py-2 text-sm transition-colors ${
                       pathname === item.href
-                        ? "bg-blue-500/10 text-blue-400"
-                        : "text-white/70 hover:text-white hover:bg-white/5"
+                        ? "bg-violet-500/[0.08] text-violet-300"
+                        : "text-white/70 hover:text-white hover:bg-white/[0.03]"
                     }`}
                   >
                     {item.title}
                   </Link>
                 ))}
               </div>
-              <Separator className="opacity-5 my-4" />
             </div>
           ))}
         </div>
