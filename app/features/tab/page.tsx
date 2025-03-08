@@ -5,13 +5,15 @@ export default function TabFeaturesPage() {
         Tab Features
       </h1>
       <div className="prose prose-invert max-w-none prose-lg">
-        <p className="text-white/80 leading-relaxed mb-8">
+        <p className="text-white/90 leading-relaxed mb-8 bg-white/[0.03] rounded-xl p-6 backdrop-blur-sm">
           Cursor provides powerful tab management features that help you organize
           your workspace efficiently and boost your productivity through intelligent suggestions and automation.
         </p>
-        <p className="text-white/80 leading-relaxed mb-6">
-          The Tab key in Cursor provides three core functionalities:
-        </p>
+
+        <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
+          Core Capabilities
+        </h2>
+        
         <div className="space-y-6">
           <div className="rounded-xl bg-white/[0.03] backdrop-blur-sm p-6 hover:bg-white/[0.04] transition-colors">
             <h3 className="text-xl font-semibold text-violet-300 mb-3">Code Completion</h3>

@@ -34,6 +34,14 @@ const sections: Section[] = [
         title: "Tab Features",
         href: "/features/tab",
       },
+      {
+        title: "Inline Chat",
+        href: "/features/inline-chat",
+      },
+      {
+        title: "Side Chat",
+        href: "/features/side-chat",
+      },
     ],
   },
 ]
