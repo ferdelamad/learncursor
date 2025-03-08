@@ -18,7 +18,7 @@ export const Header = () => {
             className="text-white/70 hover:text-white rounded-xl" 
             asChild
           >
-            <Link href="https://cursor.sh" target="_blank">
+            <Link href="https://cursor.com" target="_blank">
               Official Website
             </Link>
           </Button>
@@ -26,7 +26,7 @@ export const Header = () => {
             className="bg-violet-600/80 hover:bg-violet-600 text-white rounded-xl" 
             asChild
           >
-            <Link href="https://cursor.sh/download" target="_blank">
+            <Link href="https://cursor.com/downloads" target="_blank">
               Download Cursor
             </Link>
           </Button>

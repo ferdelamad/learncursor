@@ -28,23 +28,6 @@ const sections: Section[] = [
     ],
   },
   {
-    title: "Core Features",
-    items: [
-      {
-        title: "Tab Features",
-        href: "/features/tab",
-      },
-      {
-        title: "Inline Chat",
-        href: "/features/inline-chat",
-      },
-      {
-        title: "Side Chat",
-        href: "/features/side-chat",
-      },
-    ],
-  },
-  {
     title: "Features",
     items: [
       {

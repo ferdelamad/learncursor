@@ -2,12 +2,19 @@ export default function TerminalPage() {
   return (
     <div className="max-w-3xl mx-auto py-8">
       <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
-        Terminal (⌘K)
+        Terminal
       </h1>
       <div className="prose prose-invert max-w-none prose-lg">
         <p className="text-white/90 leading-relaxed mb-8 bg-white/[0.03] rounded-xl p-6 backdrop-blur-sm">
         The Terminal in Cursor combines traditional command-line functionality with AI assistance, transforming it into an intelligent interface for managing your development workflow.
         </p>
+
+          <div className="bg-white/[0.03] rounded-lg p-4 space-y-2">
+            <p className="flex gap-2">
+              <span className="text-violet-300 font-semibold">Chat Shortcut:</span>
+              <span className="text-white/70">Press ⌘K to toggle the chat interface in the terminal</span>
+            </p>
+          </div>
 
         <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
           Core Capabilities
@@ -57,7 +64,7 @@ export default function TerminalPage() {
         <div className="mt-8 bg-violet-500/[0.08] rounded-xl p-6 backdrop-blur-sm">
           <p className="flex items-center gap-4 text-white/90">
             <span className="text-violet-300 font-semibold whitespace-nowrap">💡 Pro Tip:</span>
-            Use the terminal's AI assistance for complex file operations or when you can't remember specific command flags and options.
+            Use the terminal's AI Chat for complex file operations or when you can't remember specific command flags and options.
           </p>
         </div>
       </div>

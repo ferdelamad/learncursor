@@ -4,16 +4,15 @@ import Link from "next/link"
 export default function HomePage() {
   return (
     <div className="max-w-3xl mx-auto py-12">
-      <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+      <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
         Welcome to Learn Cursor
       </h1>
       <p className="text-xl text-white/70 mb-8 leading-relaxed">
-        Master the next-generation AI-powered code editor and supercharge your
-        development workflow with our comprehensive guide.
+        Learn how to effectively use Cursor, an intelligent code editor that enhances your development workflow through AI-powered features and VS Code familiarity. This guide covers core functionalities, keyboard shortcuts, and practical applications to help you write better code faster.
       </p>
       <Button 
         size="lg" 
-        className="bg-blue-600 hover:bg-blue-700 text-white"
+        className="bg-violet-600/80 hover:bg-violet-600 text-white rounded-xl" 
         asChild
       >
         <Link href="/what-is-cursor">Start Learning →</Link>
