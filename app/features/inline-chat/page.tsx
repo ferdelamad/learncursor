@@ -88,6 +88,13 @@ export default function InlineChatPage() {
             ))}
           </ol>
         </div>
+
+        <div className="mt-4 bg-violet-500/[0.08] rounded-xl p-6 backdrop-blur-sm">
+          <p className="flex items-center gap-4 text-white/90">
+            <span className="text-violet-300 font-semibold whitespace-nowrap">💡 Pro Tip:</span>
+            Press the Esc key at any time to exit the Chat interface and return to the terminal.
+          </p>
+        </div>
       </div>
     </div>
   )

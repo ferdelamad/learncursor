@@ -29,7 +29,7 @@ export default function TerminalPage() {
             <div className="bg-white/[0.03] rounded-lg p-4 space-y-2">
               <p className="flex gap-2">
                 <span className="text-violet-300 font-semibold">Example:</span>
-                <span className="text-white/70">"Find all files modified in the last 24 hours" → Generates the appropriate find command</span>
+                <span className="text-white/70">&quot;Find all files modified in the last 24 hours&quot; → Generates the appropriate find command</span>
               </p>
             </div>
           </div>
