@@ -68,6 +68,22 @@ export default function TabFeaturesPage() {
               </li>
             </ul>
           </div>
+
+          <div className="rounded-xl bg-white/[0.03] backdrop-blur-sm p-6 hover:bg-white/[0.04] transition-colors">
+            <h3 className="text-xl font-semibold text-violet-300 mb-3">Watch a Demo</h3>
+            <div className="relative aspect-video rounded-lg overflow-hidden">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/kn7MkSNJ4yI?vq=hd1080"
+                title="Code Completion Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            <p className="mt-3 text-sm text-white/60 text-center">
+              Watch a demo of code completion in action
+            </p>
+          </div>
         </div>
       </div>
     </div>

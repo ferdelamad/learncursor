@@ -20,14 +20,18 @@ export default function InlineChatPage() {
             <p className="text-white/80 mb-4">
               Creates code snippets and functions based on natural language descriptions, helping you quickly implement new features.
             </p>
-            <div className="bg-white/[0.03] rounded-lg p-4 space-y-2">
-              <p className="flex gap-2">
-                <span className="text-violet-300 font-semibold">Example:</span>
-                <span className="text-white/70">"Create a function that validates email addresses"</span>
-              </p>
-              <p className="flex gap-2">
-                <span className="text-violet-300 font-semibold">Action:</span>
-                <span className="text-white/70">Generates the requested code directly in your editor</span>
+            <div className="bg-white/[0.02] rounded-xl p-6 backdrop-blur-sm hover:bg-white/[0.04] transition-colors">
+              <div className="relative aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/rCZtfWNv1kc?vq=hd1080"
+                  title="Inline Chat Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <p className="mt-3 text-sm text-white/60 text-center">
+                Watch a demo of Inline Chat in action
               </p>
             </div>
           </div>
