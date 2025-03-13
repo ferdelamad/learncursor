@@ -1,4 +1,5 @@
 import { CollapsibleCard } from "@/components/ui/collapsible-card"
+import { GitHubEmbed } from "@/components/ui/github-embed"
 
 const taskPromptPreview = `Create a structured development roadmap for [TASK NAME] using Cursor's Task format. Follow the KISS principle (Keep It Simple, Stupid) to ensure clarity and focus.
 
@@ -106,6 +107,19 @@ export default function TasksPage() {
               The AI agent can mark tasks and subtasks as completed, providing natural stopping points for you to review changes before continuing to the next step.
             </p>
           </div>
+
+          <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
+            Example Task
+          </h2>
+
+          <p className="text-white/90 mb-6">
+            Here's an example of a structured task file for building a fullstack blog using Next.js, Supabase, and Shadcn UI:
+          </p>
+
+          <GitHubEmbed 
+            title="Fullstack Blog Task"
+            src="https://github.com/ferdelamad/cursor-task-fullstack-blog-nextjs-supabase/blob/main/.cursor/tasks/init.md"
+          />
         </div>
 
         <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
