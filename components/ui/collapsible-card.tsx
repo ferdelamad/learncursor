@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "./button"
-import { ChevronDown, ChevronUp, Github } from "lucide-react"
+import { ChevronDown, ChevronUp, Github, Copy, Check } from "lucide-react"
 
 interface CollapsibleCardProps {
   title: string
@@ -13,10 +13,37 @@ interface CollapsibleCardProps {
 
 export const CollapsibleCard = ({ title, preview, content, githubUrl }: CollapsibleCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isCopied, setIsCopied] = useState(false)
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(content)
+    setIsCopied(true)
+    setTimeout(() => setIsCopied(false), 2000)
+  }
 
   return (
     <div className="bg-white/[0.03] rounded-xl p-6 backdrop-blur-sm border border-white/[0.05] hover:border-violet-500/20 transition-colors">
-      <h3 className="text-xl font-semibold text-violet-300 mb-3">{title}</h3>
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="text-xl font-semibold text-violet-300">{title}</h3>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-violet-400 hover:text-violet-300 hover:bg-white/[0.02]"
+          onClick={handleCopy}
+        >
+          {isCopied ? (
+            <>
+              <Check className="h-4 w-4 mr-2" />
+              <span>Copied!</span>
+            </>
+          ) : (
+            <>
+              <Copy className="h-4 w-4 mr-2" />
+              <span>Copy</span>
+            </>
+          )}
+        </Button>
+      </div>
       <div className="prose prose-invert max-w-none">
         <div className={`relative bg-white/[0.02] rounded-lg p-4 ${!isExpanded ? "max-h-[200px] overflow-hidden" : ""}`}>
           {!isExpanded && (

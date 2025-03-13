@@ -58,6 +58,14 @@ const sections: Section[] = [
         href: "/features/rules",
       },
       {
+        title: "Tasks",
+        href: "/features/tasks",
+      },
+      {
+        title: "MCP",
+        href: "/features/mcp",
+      },
+      {
         title: "Agent / Composer",
         href: "/features/composer",
       }
