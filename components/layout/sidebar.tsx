@@ -50,6 +50,14 @@ const sections: Section[] = [
         href: "/features/context",
       },
       {
+        title: "@ Symbols",
+        href: "/features/at-symbols",
+      },
+      {
+        title: "Rules",
+        href: "/features/rules",
+      },
+      {
         title: "Agent / Composer",
         href: "/features/composer",
       }
