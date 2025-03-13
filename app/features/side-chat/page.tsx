@@ -72,6 +72,10 @@ export default function SideChatPage() {
               </li>
             ))}
           </ul>
+          <br />
+          <p className="text-white/80 mt-4">
+           Since models like ChatGPT and Claude have  <span className="text-violet-300 font-semibold">Multi modal</span> capabilities, you can also upload images and files to the side chat.
+          </p>
         </div>
 
         <div className="mt-8 bg-violet-500/[0.08] rounded-xl p-6 backdrop-blur-sm">

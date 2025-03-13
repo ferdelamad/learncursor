@@ -45,6 +45,14 @@ const sections: Section[] = [
         title: "Terminal",
         href: "/features/terminal",
       },
+      {
+        title: "Context",
+        href: "/features/context",
+      },
+      {
+        title: "Agent / Composer",
+        href: "/features/composer",
+      }
     ],
   },
 ]
