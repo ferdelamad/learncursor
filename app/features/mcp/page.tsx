@@ -77,18 +77,18 @@ export default function MCPPage() {
           </div>
 
           <div className="bg-white/[0.02] rounded-xl p-6 backdrop-blur-sm hover:bg-white/[0.04] transition-colors">
-            <h3 className="text-xl font-semibold text-violet-300 mb-2">Notion Integration</h3>
+            <h3 className="text-xl font-semibold text-violet-300 mb-2">BrowserTools Integration</h3>
             <p className="text-white/80 mb-3">
-              Read data from Notion to guide Cursor in implementing features based on your documentation and specifications.
+              BrowserTools gives AI code editors and agents the ability to monitor and interact with your web browser for highly effective debugging.
             </p>
             <a 
-              href="https://github.com/suekou/mcp-notion-server"
+              href="https://browsertools.agentdesk.ai/installation"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300 transition-colors"
             >
-              <Github className="h-4 w-4" />
-              <span>View Repository</span>
+              <ExternalLink className="h-4 w-4" />
+              <span>View Documentation</span>
             </a>
           </div>
 
