@@ -1,95 +1,5 @@
-import { CollapsibleCard } from "@/components/ui/collapsible-card"
+import { GitHubEmbed } from "@/components/ui/github-embed"
 import { Github, ExternalLink } from "lucide-react"
-
-const exampleRulePreview = `---
-description: Base rules for interacing with the app
-globs: *.tsx, *.ts, *.scss, *.js, *.jsx, *.scss, *.css
----
-# Full-stack personal blog
-
-You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI, Radix UI, Supabase, and Tailwind.
-
-**Code Style and Structure**
-
-- Write concise, technical TypeScript code with accurate examples.
-- Use functional and declarative programming patterns; avoid classes.
-- Prefer iteration and modularization over code duplication...`
-
-const exampleRuleContent = `---
-description: Base rules for interacing with the app
-globs: *.tsx, *.ts, *.scss, *.js, *.jsx, *.scss, *.css
----
-# Full-stack personal blog
-
-You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI, Radix UI, Supabase, and Tailwind.
-
-**Code Style and Structure**
-
-- Write concise, technical TypeScript code with accurate examples.
-- Use functional and declarative programming patterns; avoid classes.
-- Prefer iteration and modularization over code duplication.
-- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
-- Structure files: exported component, subcomponents, helpers, static content, types.
-
-**Naming Conventions**
-
-- Use lowercase with dashes for directories (e.g., components/auth-wizard).
-- Favor named exports for components.
-
-**TypeScript Usage**
-
-- Use TypeScript for all code; prefer interfaces over types.
-- Avoid enums; use const objects or as const assertions instead.
-- Use functional components with TypeScript interfaces.
-
-**Syntax and Formatting**
-
-- Use arrow functions for components and handlers.
-- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
-- Use declarative JSX.
-
-**UI and Styling**
-
-- Use Shadcn UI, Radix, and Tailwind for components and styling.
-- Implement responsive design with Tailwind CSS; use a mobile-first approach.
-
-**Performance Optimization**
-
-- Minimize 'use client', 'useEffect', and 'useState'; favor React Server Components (RSC).
-- Wrap client components in Suspense with fallback.
-- Use dynamic loading for non-critical components.
-- Optimize images: use Next.js Image component, include size data, implement lazy loading.
-
-**Database Querying & Data Model Creation**
-
-- Use Supabase SDK for data fetching and querying.
-- For data model creation, use Supabase's schema builder.
-
-**Key Conventions**
-
-- Use 'nuqs' for URL search parameter state management.
-- Optimize Web Vitals (LCP, CLS, FID).
-- Limit 'use client':
-  - Favor server components and Next.js SSR.
-  - Use only for Web API access in small components.
-  - Avoid for data fetching or state management.
-
-**Data Fetching and API Routes**
-
-- Use Next.js App Router conventions for data fetching and API routes.
-- Implement efficient caching and revalidation strategies using Next.js built-in features.
-- Use route handlers (route.ts) for API routes in the App Router.
-
-**Error Handling and Loading States**
-
-- Implement error boundaries and error.tsx files for error handling.
-- Use loading.tsx files for managing loading states.
-
-**SEO and Metadata**
-
-- Use Next.js 14's metadata API for SEO optimization.
-
-**Follow Next.js docs for Data Fetching, Rendering, and Routing.**`
 
 export default function RulesPage() {
   return (
@@ -99,9 +9,29 @@ export default function RulesPage() {
       </h1>
       <div className="prose prose-invert max-w-none prose-lg">
         <p className="text-white/90 leading-relaxed mb-8 bg-white/[0.03] rounded-xl p-6 backdrop-blur-sm">
-          Rules in Cursor provide fine-grained control over AI behavior, acting as instructions or system prompts for the underlying language models. 
-          Through project-specific and global rules, you can customize how AI interacts with different parts of your codebase.
+          Rules help you customize how Cursor's AI interacts with your codebase. By defining specific guidelines, 
+          coding standards, and project requirements, you ensure consistent and high-quality AI assistance.
         </p>
+
+        <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
+          Example Rule
+        </h2>
+
+        <p className="text-white/90 mb-6">
+          Here's an example of a rule file that defines coding standards for a Next.js fullstack application:
+        </p>
+
+        <GitHubEmbed 
+          title="Base Rules for Next.js App"
+          src="https://github.com/ferdelamad/cursor-task-fullstack-blog-nextjs-supabase/blob/main/.cursor/rules/base.mdc"
+        />
+
+        <div className="mt-8 bg-violet-500/[0.08] rounded-xl p-6 backdrop-blur-sm">
+          <p className="flex items-center gap-4 text-white/90">
+            <span className="text-violet-300 font-semibold whitespace-nowrap">💡 Pro Tip:</span>
+            You can use @file to reference multiple rule files, allowing you to chain multiple rules together
+          </p>
+        </div>
 
         <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
           Project Rules
@@ -168,17 +98,6 @@ export default function RulesPage() {
         </div>
 
         <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
-          Example Rule
-        </h2>
-
-        <CollapsibleCard
-          title="Project Base Rule"
-          preview={exampleRulePreview}
-          content={exampleRuleContent}
-          githubUrl="https://github.com/ferdelamad/cursor-task-fullstack-blog-nextjs-supabase/blob/main/.cursor/rules/base.mdc"
-        />
-
-        <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
           Global Rules
         </h2>
 
@@ -193,13 +112,6 @@ export default function RulesPage() {
               <span className="text-white/70">{`Cursor Settings > General > Rules for AI`}</span>
             </p>
           </div>
-        </div>
-
-        <div className="mt-8 bg-violet-500/[0.08] rounded-xl p-6 backdrop-blur-sm">
-          <p className="flex items-center gap-4 text-white/90">
-            <span className="text-violet-300 font-semibold whitespace-nowrap">💡 Pro Tip:</span>
-            You can use @file to reference multiple rule files, allowing you to chain multiple rules together
-          </p>
         </div>
 
         <h2 className="text-3xl font-bold mt-8 mb-6 bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
