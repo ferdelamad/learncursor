@@ -117,7 +117,7 @@ export default function RulesPage() {
             <div className="bg-white/[0.03] rounded-lg p-4 space-y-2">
               <p className="flex gap-2">
                 <span className="text-violet-300 font-semibold">Create Rule:</span>
-                <span className="text-white/70">Cmd + Shift + P > New Cursor Rule</span>
+                <span className="text-white/70">{`Cmd + Shift + P > New Cursor Rule`}</span>
               </p>
             </div>
           </div>
@@ -184,8 +184,8 @@ export default function RulesPage() {
 
         <div className="bg-white/[0.02] rounded-xl p-6 backdrop-blur-sm">
           <p className="text-white/80 mb-4">
-            Global rules can be configured under Cursor Settings > General > Rules for AI, applying across all projects.
-            These are ideal for consistent preferences like output language and response length.
+            {`Global rules can be configured under Cursor Settings > General > Rules for AI, applying across all projects.
+            These are ideal for consistent preferences like output language and response length.`}
           </p>
           <div className="bg-white/[0.03] rounded-lg p-4 space-y-2">
             <p className="flex gap-2">
