@@ -41,14 +41,26 @@ export default function RulesPage() {
           <div className="bg-white/[0.02] rounded-xl p-6 backdrop-blur-sm hover:bg-white/[0.04] transition-colors">
             <h3 className="text-xl font-semibold text-violet-300 mb-3">Configuration</h3>
             <p className="text-white/80 mb-4">
-              Project rules are stored in the .cursor/rules directory, providing granular control through path-specific configurations.
+              Project rules are stored in the <code className="px-2 py-0.5 rounded bg-white/[0.05]">.cursor/rules</code> directory, providing granular control through path-specific configurations.
               These rules are version-controlled, making them easy to share and maintain across your team.
             </p>
             <div className="bg-white/[0.03] rounded-lg p-4 space-y-2">
-              <p className="flex gap-2">
-                <span className="text-violet-300 font-semibold">Create Rule:</span>
-                <span className="text-white/70">{`Cmd + Shift + P > New Cursor Rule`}</span>
-              </p>
+                <span className="text-violet-300 font-semibold inline-block">Create Rule:</span>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-white/80">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-violet-300 text-sm">
+                      1
+                    </span>
+                    Open the Command Palette with <kbd className="px-2 py-1 rounded bg-white/[0.05]">⌘ + ⇧ + P</kbd>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 text-white/80">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-violet-300 text-sm">
+                      2
+                    </span>
+                    Search for and select "New Cursor Rule"
+                  </div>
+                </div>
             </div>
           </div>
 
