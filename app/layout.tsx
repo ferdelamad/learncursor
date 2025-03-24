@@ -22,11 +22,16 @@ export default function RootLayout({
         <div className="min-h-screen bg-gradient-to-br from-[#0a0a1b] via-[#161644] to-[#1f1f4d]">
           <div className="flex h-screen flex-col">
             <Header />
-            <div className="flex flex-1 gap-6 p-6 overflow-hidden">
-              <Sidebar />
+            <div className="flex flex-col md:flex-row flex-1 gap-4 md:gap-6 p-4 md:p-6 overflow-hidden">
+              <div className="md:hidden mb-4">
+                <Sidebar />
+              </div>
+              <div className="hidden md:block">
+                <Sidebar />
+              </div>
               <main className="flex-1 rounded-2xl bg-[#12122a]/60 backdrop-blur-xl overflow-auto">
                 <div className="h-full">
-                  <div className="px-8 py-10">
+                  <div className="px-4 md:px-8 py-6 md:py-10">
                     {children}
                   </div>
                 </div>

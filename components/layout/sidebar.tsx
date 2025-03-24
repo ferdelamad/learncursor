@@ -3,6 +3,9 @@
 import { ScrollArea } from "@/components/ui/scroll-area"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 interface Section {
   title: string
@@ -75,35 +78,53 @@ const sections: Section[] = [
 
 export function Sidebar() {
   const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="w-72 rounded-2xl bg-[#12122a]/60 backdrop-blur-xl">
-      <ScrollArea className="h-full">
-        <div className="p-4">
-          {sections.map((section) => (
-            <div key={section.title} className="mb-6 last:mb-0">
-              <h4 className="font-medium text-xs text-violet-300/50 uppercase tracking-wider px-2 mb-3">
-                {section.title}
-              </h4>
-              <div className="space-y-0.5">
-                {section.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`block rounded-xl px-3 py-2 text-sm transition-colors ${
-                      pathname === item.href
-                        ? "bg-violet-500/[0.08] text-violet-300"
-                        : "text-white/70 hover:text-white hover:bg-white/[0.03]"
-                    }`}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
+    <div className="w-full md:w-72">
+      {/* Mobile Toggle Button */}
+      <div className="flex justify-between items-center md:hidden bg-[#12122a]/60 backdrop-blur-xl p-3 rounded-2xl">
+        <h3 className="font-medium text-sm text-violet-300">Menu</h3>
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          className="p-1.5" 
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
+        </Button>
+      </div>
+
+      {/* Sidebar Content - Hidden on mobile when closed */}
+      <div className={`${isOpen ? 'block mt-2' : 'hidden'} md:block rounded-2xl bg-[#12122a]/60 backdrop-blur-xl`}>
+        <ScrollArea className="h-full max-h-[75vh] md:max-h-full">
+          <div className="p-4">
+            {sections.map((section) => (
+              <div key={section.title} className="mb-6 last:mb-0">
+                <h4 className="font-medium text-xs text-violet-300/50 uppercase tracking-wider px-2 mb-3">
+                  {section.title}
+                </h4>
+                <div className="grid grid-cols-1 gap-0.5 md:space-y-0.5">
+                  {section.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`block rounded-xl px-3 py-2 text-sm transition-colors ${
+                        pathname === item.href
+                          ? "bg-violet-500/[0.08] text-violet-300"
+                          : "text-white/70 hover:text-white hover:bg-white/[0.03]"
+                      }`}
+                      onClick={() => setIsOpen(false)} // Close menu on mobile after clicking
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </ScrollArea>
+            ))}
+          </div>
+        </ScrollArea>
+      </div>
     </div>
   )
 } 
