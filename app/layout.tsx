@@ -23,12 +23,7 @@ export default function RootLayout({
           <div className="flex h-screen flex-col">
             <Header />
             <div className="flex flex-col md:flex-row flex-1 gap-4 md:gap-6 p-4 md:p-6 overflow-hidden">
-              <div className="md:hidden mb-4">
-                <Sidebar />
-              </div>
-              <div className="hidden md:block">
-                <Sidebar />
-              </div>
+              <Sidebar />
               <main className="flex-1 rounded-2xl bg-[#12122a]/60 backdrop-blur-xl overflow-auto">
                 <div className="h-full">
                   <div className="px-4 md:px-8 py-6 md:py-10">

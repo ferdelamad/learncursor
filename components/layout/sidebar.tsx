@@ -3,7 +3,7 @@
 import { ScrollArea } from "@/components/ui/scroll-area"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -79,16 +79,24 @@ const sections: Section[] = [
 export function Sidebar() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+  
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
     <div className="w-full md:w-72">
       {/* Mobile Toggle Button */}
-      <div className="flex justify-between items-center md:hidden bg-[#12122a]/60 backdrop-blur-xl p-3 rounded-2xl">
-        <h3 className="font-medium text-sm text-violet-300">Menu</h3>
+      <div className="flex justify-between items-center md:hidden bg-[#12122a]/70 backdrop-blur-xl p-3 rounded-xl shadow-sm">
+        <div className="flex items-center">
+          <h3 className="font-medium text-sm text-violet-300">Navigation</h3>
+          {isOpen && <span className="ml-2 text-xs text-violet-300/50">(tap item to close)</span>}
+        </div>
         <Button 
           variant="ghost" 
           size="sm" 
-          className="p-1.5" 
+          className="p-1.5 hover:bg-violet-500/10 text-violet-300" 
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -96,7 +104,7 @@ export function Sidebar() {
       </div>
 
       {/* Sidebar Content - Hidden on mobile when closed */}
-      <div className={`${isOpen ? 'block mt-2' : 'hidden'} md:block rounded-2xl bg-[#12122a]/60 backdrop-blur-xl`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} md:block mt-2 rounded-xl bg-[#12122a]/70 backdrop-blur-xl shadow-sm`}>
         <ScrollArea className="h-full max-h-[75vh] md:max-h-full">
           <div className="p-4">
             {sections.map((section) => (
@@ -114,7 +122,7 @@ export function Sidebar() {
                           ? "bg-violet-500/[0.08] text-violet-300"
                           : "text-white/70 hover:text-white hover:bg-white/[0.03]"
                       }`}
-                      onClick={() => setIsOpen(false)} // Close menu on mobile after clicking
+                      onClick={() => setIsOpen(false)} 
                     >
                       {item.title}
                     </Link>
