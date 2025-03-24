@@ -8,7 +8,7 @@ export default function HomePage() {
         Welcome to Learn Cursor
       </h1>
       <p className="text-lg md:text-xl text-white/70 mb-6 md:mb-8 leading-relaxed">
-        Learn how to effectively use Cursor, an intelligent code editor that enhances your development workflow through AI-powered features and VS Code familiarity. This guide covers core functionalities, keyboard shortcuts, and practical applications to help you write better code faster.
+        Learn how to effectively use Cursor, an intelligent code editor that enhances your development workflow through AI-powered features. This guide covers core functionalities, keyboard shortcuts, and practical applications to help you write better code faster.
       </p>
       <Button 
         size="lg" 
